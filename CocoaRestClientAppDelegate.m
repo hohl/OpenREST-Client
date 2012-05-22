@@ -13,7 +13,6 @@
 #import "CRCRequest.h"
 #import <Foundation/Foundation.h>
 #import "JSON.h"
-#import <Sparkle/SUUpdater.h>
 
 #define MAIN_WINDOW_MENU_TAG 150
 
@@ -1047,10 +1046,6 @@ static CRCContentType requestContentType;
 }
 
 - (IBAction) showPreferences:(id)sender {
-    NSLog(@"Check for updates: %d", [[SUUpdater sharedUpdater] automaticallyChecksForUpdates]);
-    NSLog(@"Downloads updates: %d", [[SUUpdater sharedUpdater] automaticallyDownloadsUpdates]);
-    NSLog(@"Update check freq: %f", [[SUUpdater sharedUpdater] updateCheckInterval]);
-    
     if(!self.preferencesController)
         self.preferencesController = [[PreferencesController alloc] initWithWindowNibName:@"Preferences"];
     
